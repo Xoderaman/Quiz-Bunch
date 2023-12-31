@@ -25,7 +25,7 @@ def register(request):
         )
         user.set_password(password)
         user.save()
-        return redirect("login")
+        return redirect("doLogin")
     return render(request, "registration/signup.html")
 
 
@@ -39,6 +39,6 @@ def doLogin(request):
             login(request, user)
             return redirect("index")
         else:
-            return redirect("login")
+            return redirect("doLogin")
 
     return render(request, "registration/login.html")
